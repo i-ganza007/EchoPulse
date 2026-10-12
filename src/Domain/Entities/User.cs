@@ -23,6 +23,9 @@ namespace Echo.src.Domain.Entities
 
 
 
+        // Used by EF Core when materializing entities
+        private User() { }
+
         public User(Guid UserId ,string DisplayName,string Email,Guid AvatarUrl,bool IsBanned,DateTime? LastSeenAt = null) 
         {
             displayName = DisplayName;

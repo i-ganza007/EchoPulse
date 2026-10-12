@@ -42,13 +42,16 @@ namespace Echo.src.Domain.Entities
 
         public ICollection<User> participants { get; set; } = new List<User> {};
 
+        // Used by EF Core when materializing entities
+        private Jam() { }
+
         public Jam(string Title,string H3Index,int H3Resolution,bool IsPublic,int Status)
         {
             title = Title;
             h3Index = H3Index;
             h3Resolution = H3Resolution;
             isPublic = IsPublic;
-            //status = Status;
+            status = (JamStatus)Status;
         }
         public Jam(string Title, string H3Index, int H3Resolution, bool IsPublic, int Status,string Description,string CurrentTrackId,string CurrentPositionMs,DateTime EndedAt,DateTime LastActivityAt) :this( Title,  H3Index,  H3Resolution,  IsPublic,  Status) {
             description = Description;

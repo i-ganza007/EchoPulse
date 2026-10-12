@@ -17,6 +17,9 @@ namespace Echo.src.Domain.Entities
         public DateTime? leftAt { get; set; } = null;
         public bool isHost { get; set; } = false;
 
+        // Used by EF Core when materializing entities
+        private JamParticipant() { }
+
         public JamParticipant(Guid JamParticipantId,Guid UserId, Guid JamId,bool IsHost) {
             jamParticipantId = JamParticipantId;
             userId = UserId;

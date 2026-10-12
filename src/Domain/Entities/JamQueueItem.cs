@@ -23,6 +23,9 @@ namespace Echo.src.Domain.Entities
         public DateTime addedAt { get; set; } = DateTime.Now;
         public bool isPlayed { get; set; } = false;
 
+        // Used by EF Core when materializing entities
+        private JamQueueItem() { }
+
         public JamQueueItem(Guid JamQueueItemid,Guid JamId,string TrackId,Guid AddedByUserId,int Position,bool IsPlayed)
         {
             jamQueueItemid = JamQueueItemid;
