@@ -8,9 +8,35 @@
 
   <ItemGroup>
     <Folder Include="docs\" />
-    <Folder Include="src\Domain\" />
-    <Folder Include="src\Infrastructure\" />
-    <Folder Include="src\Application\" />
+    <Folder Include="src\Api\Controllers\" />
+    <Folder Include="src\Api\Hubs\" />
+    <Folder Include="src\Api\Middleware\" />
+    <Folder Include="src\Api\Configurations\" />
+    <Folder Include="src\Api\Properties\" />
+    <Folder Include="src\Application\DTOs\" />
+    <Folder Include="src\Application\Mapping\" />
+    <Folder Include="src\Application\Validators\" />
+    <Folder Include="src\Application\Services\" />
+    <Folder Include="src\Domain\Interfaces\" />
+    <Folder Include="src\Domain\Events\" />
+    <Folder Include="src\Domain\Exceptions\" />
+    <Folder Include="src\Domain\ValueObjects\" />
+    <Folder Include="src\Infrastructure\GeoSpatial\" />
+    <Folder Include="src\Infrastructure\Auth\" />
+    <Folder Include="src\Infrastructure\Background\" />
+    <Folder Include="src\Infrastructure\DependecyInjection\" />
+    <Folder Include="src\Infrastructure\Telemetry\" />
+    <Folder Include="src\Infrastructure\RealTime\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.12" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.12">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="10.0.12" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.12" />
   </ItemGroup>
 
 </Project>
