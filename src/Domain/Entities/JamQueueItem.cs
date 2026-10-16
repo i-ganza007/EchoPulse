@@ -10,10 +10,7 @@ namespace Echo.src.Domain.Entities
         public Jam jamModel { get; set; }
         public string trackId { get; set; }
 
-        public JamQueueItem NextItem { get; set; } = null;
-
-        public JamQueueItem PreviousItem { get; set; } = null;
-
+       
         public string? trackTitle { get; set; }
         public string? trackArtist { get; set; }
         public Guid addedByUserId { get; set; }

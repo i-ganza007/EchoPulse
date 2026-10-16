@@ -22,7 +22,11 @@ namespace Echo.src.Domain.Entities
         public int h3Resolution { get; set; }
         public bool isPublic { get; set; } = true;
 
+        public Guid jamQueueItemId { get; set; }
+
         public JamQueueItem startingTrack { get; set; } = null;
+
+        public ICollection<JamQueueItem> jamItems { get; set; } = new List<JamQueueItem>();
 
         public JamStatus status { get; set; } = JamStatus.Active;
 
@@ -45,15 +49,16 @@ namespace Echo.src.Domain.Entities
         // Used by EF Core when materializing entities
         private Jam() { }
 
-        public Jam(string Title,string H3Index,int H3Resolution,bool IsPublic,int Status)
+        public Jam(string Title,string H3Index,int H3Resolution,bool IsPublic,int Status,Guid JamQueueItemId)
         {
             title = Title;
+            jamQueueItemId = JamQueueItemId;
             h3Index = H3Index;
             h3Resolution = H3Resolution;
             isPublic = IsPublic;
             status = (JamStatus)Status;
         }
-        public Jam(string Title, string H3Index, int H3Resolution, bool IsPublic, int Status,string Description,string CurrentTrackId,string CurrentPositionMs,DateTime EndedAt,DateTime LastActivityAt) :this( Title,  H3Index,  H3Resolution,  IsPublic,  Status) {
+        public Jam(string Title, string H3Index, int H3Resolution, bool IsPublic, int Status,string Description,string CurrentTrackId,string CurrentPositionMs,DateTime EndedAt,DateTime LastActivityAt, Guid JamQueueItemId) :this( Title,  H3Index,  H3Resolution,  IsPublic,  Status, JamQueueItemId) {
             description = Description;
             currentTrackId = CurrentTrackId;
             currentPositionMs = CurrentPositionMs;
@@ -61,22 +66,7 @@ namespace Echo.src.Domain.Entities
             lastActivityAt=LastActivityAt;
         }
 
-        public void AddTrack(JamQueueItem newTrack)
-        {
-            if(startingTrack == null)
-            {
-                startingTrack = newTrack;
-            }
-            else
-            {
-                var temp = startingTrack;
-                while (temp.NextItem != null) {
-                    temp = temp.NextItem; 
-                }
-                temp.NextItem = newTrack;
-                newTrack.PreviousItem = temp;
-            }
-        }
+       
 
 
 
