@@ -13,6 +13,7 @@ namespace Echo.src.Domain.Entities
         public string email { get; set; }
         public DateTime createdAt { get; set; } = DateTime.Now;
 
+
         public DateTime? lastSeenAt { get; set; }
 
         public bool isBanned { get; set; } = false;

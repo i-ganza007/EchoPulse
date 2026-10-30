@@ -13,13 +13,11 @@
     <Folder Include="src\Api\Middleware\" />
     <Folder Include="src\Api\Configurations\" />
     <Folder Include="src\Api\Properties\" />
-    <Folder Include="src\Application\DTOs\" />
-    <Folder Include="src\Application\Mapping\" />
+    <Folder Include="src\Application\Mapping\ContToServiceMapper\" />
     <Folder Include="src\Application\Validators\" />
-    <Folder Include="src\Application\Services\" />
-    <Folder Include="src\Domain\Interfaces\" />
     <Folder Include="src\Domain\Events\" />
     <Folder Include="src\Domain\Exceptions\" />
+    <Folder Include="src\Domain\Interfaces\" />
     <Folder Include="src\Domain\ValueObjects\" />
     <Folder Include="src\Infrastructure\GeoSpatial\" />
     <Folder Include="src\Infrastructure\Auth\" />
@@ -37,6 +35,7 @@
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="10.0.12" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.12" />
+    <PackageReference Include="pocketken.H3" Version="4.5.0.1" />
     <PackageReference Include="Serilog" Version="4.4.0" />
     <PackageReference Include="Serilog.Sinks.File" Version="7.0.0" />
   </ItemGroup>

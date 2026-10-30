@@ -1,6 +1,6 @@
-﻿namespace Echo.src.Application.Services
+﻿namespace Echo.src.Application.Repositories
 {
-    public class PlaybackSyncService
+    public class PlaybackSyncRepo
     {
     }
 }
